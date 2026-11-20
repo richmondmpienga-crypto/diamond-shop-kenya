@@ -1,8 +1,16 @@
-
 {
   "name": "diamond-shop-kenya",
+  "main": "worker.js",
   "compatibility_date": "2026-11-15",
   "assets": {
-    "directory": "."
-  }
+    "directory": ".",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "diamond-shop-db",
+      "database_id": "05ceb2db-0ec2-4e71-839f-338e1ad6f5d9"
+    }
+  ]
 }
