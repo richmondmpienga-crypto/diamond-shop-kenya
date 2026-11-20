@@ -1,1 +1,295 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diamond Shop Kenya | Admin</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #222;
+}
+
+.sidebar {
+  width: 250px;
+  background: #111;
+  color: white;
+  position: fixed;
+  height: 100vh;
+  padding: 25px 18px;
+}
+
+.brand {
+  color: #d4af37;
+  font-size: 21px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.sidebar button,
+.sidebar a {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 8px;
+  background: transparent;
+  border: none;
+  color: white;
+  text-align: left;
+  font-size: 15px;
+  text-decoration: none;
+  border-radius: 7px;
+}
+
+.sidebar button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.sidebar .active {
+  background: #d4af37;
+  color: black;
+  opacity: 1;
+  font-weight: bold;
+}
+
+.main {
+  margin-left: 250px;
+  padding: 30px;
+}
+
+.topbar {
+  background: white;
+  padding: 22px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.topbar h2 {
+  margin: 0;
+}
+
+.status {
+  background: #fff4ce;
+  color: #806000;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 3px 12px #0000000a;
+  border-top: 4px solid #d4af37;
+}
+
+.card h3 {
+  color: #777;
+  font-size: 15px;
+}
+
+.card h1 {
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.panel {
+  background: white;
+  margin-top: 25px;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.gold-button {
+  background: #d4af37;
+  border: none;
+  padding: 13px 22px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.gold-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background: #111;
+  color: white;
+}
+
+.notice {
+  padding: 15px;
+  background: #fff8e1;
+  border-left: 4px solid #d4af37;
+  margin-bottom: 25px;
+}
+
+footer {
+  text-align: center;
+  color: #777;
+  padding: 30px;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .brand {
+    margin-bottom: 15px;
+  }
+
+  .main {
+    margin-left: 0;
+    padding: 15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<aside class="sidebar">
+
+  <div class="brand">
+    ◆ DIAMOND SHOP KENYA
+  </div>
+
+  <button class="active">▦ Dashboard</button>
+  <button disabled>📦 Products</button>
+  <button disabled>📁 Categories</button>
+  <button disabled>🛒 Orders</button>
+  <button disabled>📊 Inventory</button>
+  <button disabled>💳 Payments</button>
+  <button disabled>📈 Sales Reports</button>
+  <button disabled>⚙ Settings</button>
+
+  <a href="index.html">🌐 View Website</a>
+
+</aside>
+
+<main class="main">
+
+  <div class="topbar">
+    <h2>Admin Dashboard</h2>
+    <span class="status">Setup Mode</span>
+  </div>
+
+  <div class="notice">
+    Dashboard setup in progress.
+    Database and secure admin login are not yet connected.
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>📦 Total Products</h3>
+      <h1>—</h1>
+      <small>Product catalogue</small>
+    </div>
+
+    <div class="card">
+      <h3>🛒 Total Orders</h3>
+      <h1>—</h1>
+      <small>Customer orders</small>
+    </div>
+
+    <div class="card">
+      <h3>💰 Total Sales</h3>
+      <h1>—</h1>
+      <small>Sales revenue</small>
+    </div>
+
+    <div class="card">
+      <h3>📊 Low Stock</h3>
+      <h1>—</h1>
+      <small>Inventory alerts</small>
+    </div>
+
+  </div>
+
+  <div class="panel">
+
+    <h2>Product Management</h2>
+
+    <button class="gold-button" disabled>
+      + Add New Product
+    </button>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Product</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td colspan="6">
+              Waiting for database connection.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="panel">
+    <h2>Recent Orders</h2>
+    <p>Order management will appear here once connected.</p>
+  </div>
+
+  <footer>
+    © 2026 Diamond Shop Kenya | Administration
+  </footer>
+
+</main>
+
+</body>
+</html>
