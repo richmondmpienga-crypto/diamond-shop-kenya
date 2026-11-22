@@ -291,5 +291,34 @@ footer {
 
 </main>
 
+
+<script>
+  async function adminLogin() {
+    const password = prompt("Enter Diamond Shop Kenya admin password:");
+
+    if (!password) return;
+
+    try {
+      const response = await fetch("/api/admin/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        credentials: "same-origin",
+        body: JSON.stringify({ password })
+      });
+
+      if (!response.ok) {
+        alert("Login failed. Check your password.");
+        return;
+      }
+
+      alert("Login successful.");
+      window.location.reload();
+    } catch (error) {
+      alert("Unable to connect to the login server.");
+    }
+  }
+</script>
 </body>
 </html>
